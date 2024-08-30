@@ -1,0 +1,181 @@
+import java.util.*;
+
+class Patient {
+    String id;
+    String name;
+    int age;
+    String ailment;
+
+    public Patient(String id, String name, int age, String ailment) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.ailment = ailment;
+    }
+}
+
+class Appointment {
+    String patientId;
+    String doctorName;
+    String date;
+
+    public Appointment(String patientId, String doctorName, String date) {
+        this.patientId = patientId;
+        this.doctorName = doctorName;
+        this.date = date;
+    }
+}
+
+class MedicalSupply {
+    String name;
+    int quantity;
+
+    public MedicalSupply(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+}
+
+class Staff {
+    String id;
+    String name;
+    String role;
+
+    public Staff(String id, String name, String role) {
+        this.id = id;
+        this.name = name;
+        this.role = role;
+    }
+}
+
+public class HospitalManagementSystem {
+    static List<Patient> patients = new ArrayList<>();
+    static List<Appointment> appointments = new ArrayList<>();
+    static List<MedicalSupply> supplies = new ArrayList<>();
+    static List<Staff> staffList = new ArrayList<>();
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Hospital Management System");
+            System.out.println("1. Register Patient");
+            System.out.println("2. Schedule Appointment");
+            System.out.println("3. Add Medical Supply");
+            System.out.println("4. Add Staff");
+            System.out.println("5. View Patients");
+            System.out.println("6. View Appointments");
+            System.out.println("7. View Supplies");
+            System.out.println("8. View Staff");
+            System.out.println("9. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    registerPatient(scanner);
+                    break;
+                case 2:
+                    scheduleAppointment(scanner);
+                    break;
+                case 3:
+                    addMedicalSupply(scanner);
+                    break;
+                case 4:
+                    addStaff(scanner);
+                    break;
+                case 5:
+                    viewPatients();
+                    break;
+                case 6:
+                    viewAppointments();
+                    break;
+                case 7:
+                    viewSupplies();
+                    break;
+                case 8:
+                    viewStaff();
+                    break;
+                case 9:
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    public static void registerPatient(Scanner scanner) {
+        System.out.print("Enter Patient ID: ");
+        String id = scanner.nextLine();
+        System.out.print("Enter Patient Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Patient Age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter Patient Ailment: ");
+        String ailment = scanner.nextLine();
+        patients.add(new Patient(id, name, age, ailment));
+        System.out.println("Patient registered successfully.");
+    }
+
+    public static void scheduleAppointment(Scanner scanner) {
+        System.out.print("Enter Patient ID: ");
+        String patientId = scanner.nextLine();
+        System.out.print("Enter Doctor Name: ");
+        String doctorName = scanner.nextLine();
+        System.out.print("Enter Appointment Date: ");
+        String date = scanner.nextLine();
+        appointments.add(new Appointment(patientId, doctorName, date));
+        System.out.println("Appointment scheduled successfully.");
+    }
+
+    public static void addMedicalSupply(Scanner scanner) {
+        System.out.print("Enter Supply Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Quantity: ");
+        int quantity = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        supplies.add(new MedicalSupply(name, quantity));
+        System.out.println("Medical supply added successfully.");
+    }
+
+    public static void addStaff(Scanner scanner) {
+        System.out.print("Enter Staff ID: ");
+        String id = scanner.nextLine();
+        System.out.print("Enter Staff Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Staff Role: ");
+        String role = scanner.nextLine();
+        staffList.add(new Staff(id, name, role));
+        System.out.println("Staff added successfully.");
+    }
+
+    public static void viewPatients() {
+        System.out.println("Patients:");
+        for (Patient patient : patients) {
+            System.out.println("ID: " + patient.id + ", Name: " + patient.name + ", Age: " + patient.age + ", Ailment: " + patient.ailment);
+        }
+    }
+
+    public static void viewAppointments() {
+        System.out.println("Appointments:");
+        for (Appointment appointment : appointments) {
+            System.out.println("Patient ID: " + appointment.patientId + ", Doctor: " + appointment.doctorName + ", Date: " + appointment.date);
+        }
+    }
+
+    public static void viewSupplies() {
+        System.out.println("Medical Supplies:");
+        for (MedicalSupply supply : supplies) {
+            System.out.println("Name: " + supply.name + ", Quantity: " + supply.quantity);
+        }
+    }
+
+    public static void viewStaff() {
+        System.out.println("Staff:");
+        for (Staff staff : staffList) {
+            System.out.println("ID: " + staff.id + ", Name: " + staff.name + ", Role: " + staff.role);
+        }
+    }
+}
