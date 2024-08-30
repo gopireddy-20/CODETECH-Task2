@@ -8,13 +8,13 @@
 
 # *Project Overview*
 
-## *Project: Exploratory Java Programming On HOSPITAL MANAGEMENT SYSTEM*
-## ** Overview of the Hospital Management System Project**
+## Project: Exploratory Java Programming On HOSPITAL MANAGEMENT SYSTEM*
+##  Overview of the Hospital Management System Project
 
-## **Objective **
+## Objective 
 To develop a comprehensive Java-based hospital management system that efficiently handles multiple aspects of hospital operations. The system includes modules for patient registration, appointment scheduling, electronic health records (EHR), billing and invoicing, inventory management for medical supplies, and staff management. 
 
-## ** Key Modules and Features **
+##  Key Modules and Features 
 
 1. **Patient Registration**:
    - **Functionality**: Register new patients with personal details such as name, address, and contact information.
@@ -46,7 +46,7 @@ To develop a comprehensive Java-based hospital management system that efficientl
    - **Data**: Maintain records of staff ID, name, role, and contact information.
    - **Features**: Add new staff members, view and update staff details, and manage roles and responsibilities.
 
-## ** System Design and Architecture **
+## System Design and Architecture 
 
 1. **Data Persistence**:
    - Use serialization or a file-based approach for data storage.
@@ -68,7 +68,7 @@ To develop a comprehensive Java-based hospital management system that efficientl
    - Provides the main entry point for the application.
    - Contains methods for interacting with each module.
    - Includes menus for user navigation and performs various operations based on user input.
-## **Future Enhancements**
+## Future Enhancements
 
 1. **Database Integration**:
    - Use a relational database like MySQL or PostgreSQL for data storage and management.
