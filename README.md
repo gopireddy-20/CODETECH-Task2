@@ -10,6 +10,8 @@
 
 ## Project: Exploratory Java Programming On HOSPITAL MANAGEMENT SYSTEM*
 ##  Overview of the Hospital Management System Project
+![Screenshot 2024-08-30 165348](https://github.com/user-attachments/assets/23c265af-1289-404f-a323-8444b6b32131)
+
 
 ## Objective 
 To develop a comprehensive Java-based hospital management system that efficiently handles multiple aspects of hospital operations. The system includes modules for patient registration, appointment scheduling, electronic health records (EHR), billing and invoicing, inventory management for medical supplies, and staff management. 
